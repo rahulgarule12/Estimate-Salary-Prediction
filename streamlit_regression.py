@@ -34,7 +34,7 @@ tenure=st.slider('Tenure',1,10)
 num_of_products=st.slider('number of Products',1,4)
 has_cr_card=st.selectbox('HAs Credit Card',[0,1])
 is_active_member=st.selectbox('Is Active Member',[0,1])
-
+estimated_salary = st.number_input('Estimated Salary')
 input_data=pd.DataFrame({
     'CreditScore':[credit_score],
     'Gender':[label_encoder_gender.transform([gender])[0]],
@@ -44,7 +44,9 @@ input_data=pd.DataFrame({
     'NumOfProducts':[num_of_products],
     'HasCrCard':[has_cr_card],
     'IsActiveMember':[is_active_member],
+    'EstimatedSalary': [estimated_salary],
     'Exited':[exited]
+    
 })
 
 geo_encoded=label_encoder_geo.transform([[geography]]).toarray()
