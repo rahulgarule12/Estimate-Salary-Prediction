@@ -7,7 +7,7 @@ import pickle
 
 # load the trained model
 
-model=tf.keras.load_model('regression_model.h5')
+model=tf.keras.models.load_model('regression_model.h5')
 ## load the encoders and scaler
 
 with open('open_encoder_geo.pkl','rb') as file:
